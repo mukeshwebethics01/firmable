@@ -1,0 +1,15 @@
+
+
+@font-face{
+font-family: "Rubik-Regular";
+  src: url('../assets/fonts/Rubik/Rubik-Regular.ttf')
+format('truetype'); 
+}
+
+
+@mixin btnStyle {
+        background: #FFC000;
+        font-size: 17px;
+        color: #183453;
+        border: none;
+}
