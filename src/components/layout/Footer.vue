@@ -1,6 +1,6 @@
 <template>
     <div class="footer-container">
-        <div class="hmm">
+        <div class="fmax-container">
 
             <div class="footer-container-child">
                 <div class="one">
@@ -58,13 +58,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <img class="footer-logo" src="../../assets/images/footerfirmlogo.svg" alt="">
-            <hr class="hrline">
-            <div class="copyright">
-                <span class="copyright-span">©2023 All Rights Reserved by Firmable</span>
-                <span class="copyright-span">Privacy Policy | Terms of service</span>
+
+            <div>
+                <img class="footer-logo" src="../../assets/images/footerfirmlogo.svg" alt="">
+                <hr class="hrline">
+                <div class="copyright">
+                    <span class="copyright-span">©2023 All Rights Reserved by Firmable</span>
+                    <span class="copyright-span">Privacy Policy | Terms of service</span>
+                </div>
             </div>
         </div>
     </div>
@@ -89,7 +90,7 @@ export default {
     justify-content: center;
     /** display: flex; */
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 10px;
     background: #183453;
     padding-block: 20px;
 
@@ -101,6 +102,7 @@ export default {
         grid-auto-rows: minmax(100px, auto);
         justify-content: space-between;
         padding-inline: 28px;
+        z-index: 5;
 
         @include desktop-larg {
             grid-template-columns: repeat(3, 1fr);
@@ -123,6 +125,11 @@ export default {
 
     }
 
+    .fmax-container {
+        max-width: 1440px;
+        margin: auto;
+    }
+
     .footer-links {
         list-style: none;
         margin-bottom: 20px;
@@ -132,6 +139,7 @@ export default {
             color: white;
             text-decoration: none;
             font-size: 15px;
+            font-family: "Poppins-Regular", sans-serif;
 
             &:hover {
                 color: #2C8CF4;
@@ -142,6 +150,7 @@ export default {
     .first-link {
         font-weight: 500;
         font-size: 16px;
+        font-family: "Rubik", sans-serif;
     }
 
     .socailmedia-icons {
@@ -169,10 +178,14 @@ export default {
         justify-content: space-between;
         padding-inline: 28px;
         padding-block: 20px;
+  @include tablet {
+flex-direction : column;
+}
 
         &-span {
             color: white;
             font-size: 14px;
+            font-family: "Poppins-Regular", sans-serif;
         }
 
 

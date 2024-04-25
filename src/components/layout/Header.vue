@@ -1,41 +1,44 @@
 <template>
     <div class="card">
-        <Menubar :model="items" class="navbar">
-            <template #start>
-                <div class="logos">
+        <div class="card-child">
+            <Menubar :model="items" class="navbar">
+                <template #start>
+                    <div class="logos">
 
+                        <div>
+                            <img class="main-first-latter" src="../../assets/images/firstalphabetimg.svg" alt="">
+                        </div>
+                        <div class="main-logo-parent">
+                            <img class="logofirstlatter" src="../../assets/images/firstalphabetimg.svg" alt="">
+                            <img class="main-logo" src="../../assets/images/whitefimlogo.svg" alt="">
+                        </div>
+                    </div>
+                </template>
+                <template #item="{ item, props, hasSubmenu, root }" class="px-3" :focused="false">
+                    <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings" v-bind="props.action"
+                        :style="item.label === 'Solutions' ? { color: 'white', borderBottom: '1px solid white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
+                        @click="(e) => { console.log('Link clicked!', e.preventDefault()); }">
+                        <span :class="item.icon"></span>
+                        <span class="ml-2">{{ item.label }}</span>
+                        <Badge v-if="item.badge" :class="{ 'ml-auto': !root, 'ml-2': root }" :value="item.badge" />
+                        <span v-if="item.shortcut"
+                            class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{
+                                item.shortcut
+                            }}</span>
+                        <i v-if="hasSubmenu"
+                            :class="['pi pi-angle-down', { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }]"></i>
+                    </a>
+                </template>
+
+                <template #menubutton="{ id, toggleCallback }" #end>
                     <div>
-                        <img class="main-first-latter" src="../../assets/images/firstalphabetimg.svg" alt="">
-                    </div>
-                    <div class="main-logo-parent">
-                        <img class="logofirstlatter" src="../../assets/images/firstalphabetimg.svg" alt="">
-                        <img class="main-logo" src="../../assets/images/whitefimlogo.svg" alt="">
-                    </div>
-                </div>
-            </template>
-            <template #item="{ item, props, hasSubmenu, root }" class="px-3" :focused="false">
-                <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings" v-bind="props.action"
-                    :style="item.label === 'Solutions' ? { color: 'white', borderBottom: '1px solid white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
-                    @click="(e) => { console.log('Link clicked!', e.preventDefault()); }">
-                    <span :class="item.icon"></span>
-                    <span class="ml-2">{{ item.label }}</span>
-                    <Badge v-if="item.badge" :class="{ 'ml-auto': !root, 'ml-2': root }" :value="item.badge" />
-                    <span v-if="item.shortcut"
-                        class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut
-                        }}</span>
-                    <i v-if="hasSubmenu"
-                        :class="['pi pi-angle-down', { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }]"></i>
-                </a>
-            </template>
+                        <i class="pi pi-align-justify hamburger" @click="toggleCallback"></i>
 
-            <template #menubutton="{ id, toggleCallback }" #end>
-                <div>
-                    <i class="pi pi-align-justify hamburger" @click="toggleCallback"></i>
-
-                </div>
-            </template>
-        </Menubar>
-        <Button class="header-button" label="Warning" severity="warning" rounded>Get early access </Button>
+                    </div>
+                </template>
+            </Menubar>
+            <Button class="header-button" label="Warning" severity="warning" rounded>Get early access </Button>
+        </div>
     </div>
 
 
@@ -88,11 +91,24 @@ const items = ref([
 @import '../../assets/scss/mediaqueries.scss';
 @import "../../assets/scss/style.scss";
 
+
+.card-child {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
+    height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+
 .navbar {
     border: none;
     display: flex;
     align-items: center;
-    position: fixed;
+
     top: 0;
     width: 100%;
     height: 70px;
@@ -100,6 +116,8 @@ const items = ref([
     padding-inline: 25px;
     background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
     border-radius: 0px;
+    max-width: 1440px;
+    margin: auto;
 
     @include tablet {
         justify-content: space-between;
@@ -172,7 +190,7 @@ const items = ref([
             display: flex;
             align-items: center;
             margin-inline: 10px;
-            font-family: 'Rubik';
+            font-family: 'Rubik', sans-serif;
             padding: 0;
 
             @include tablet {
