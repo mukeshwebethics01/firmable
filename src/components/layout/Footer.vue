@@ -91,7 +91,6 @@ export default {
     flex-direction: column;
     margin-top: 70px;
     background: #183453;
-
     padding-block: 20px;
 
     &-child {
