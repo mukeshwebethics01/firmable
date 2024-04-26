@@ -92,6 +92,19 @@ const items = ref([
 @import "../../assets/scss/style.scss";
 
 
+
+.card {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
+    height: 70px;
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+}
+
+
 .card-child {
     display: flex;
     justify-content: center;
@@ -101,6 +114,7 @@ const items = ref([
     top: 0;
     width: 100%;
     z-index: 5;
+    max-width: 1440px;
 }
 
 
@@ -192,6 +206,7 @@ const items = ref([
             margin-inline: 10px;
             font-family: 'Rubik', sans-serif;
             padding: 0;
+            gap: 8px;
 
             @include tablet {
                 color: black !important;
@@ -205,14 +220,19 @@ const items = ref([
     position: relative;
 
     .header-button {
-        top: 14px;
-        position: fixed;
-        right: 10px;
+        top: 12px;
+        position: relative;
+
         z-index: 5;
         @include btnStyle;
-        padding-inline: 32px;
-        padding-block: 13px;
-        margin-right: 95px;
+
+        height: 46px;
+        width: 217px;
+        white-space: nowrap;
+        margin-right: 15px;
+        padding-inline: 18px;
+        display: flex;
+        justify-content: center;
 
         @include tablet {
             display: none !important;

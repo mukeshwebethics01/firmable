@@ -27,3 +27,9 @@
     @content;
 }
 }
+
+@mixin larg1850{
+@media screen and (max-width: 1850px) {
+    @content;
+}
+}

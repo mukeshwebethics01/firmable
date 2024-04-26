@@ -48,7 +48,15 @@ import Button from 'primevue/button';
 .bgcolorimg {
     background-image: url('../assets/images/herosectionbgcolor.svg');
     background-repeat: no-repeat;
-    margin-top: 70px;
+    margin-top: 69px;
+    min-height: 75vh;
+    background-size: contain;
+
+    @include larg1850 {
+        min-height: 0vh;
+    }
+
+
 }
 
 
@@ -60,38 +68,40 @@ import Button from 'primevue/button';
     justify-content: center;
     gap: 20px;
     padding-inline: 10px !important;
-    align-items:center;
+    align-items: center;
 
-@include tablet {
-       padding-bottom: 102px;
-}
+    @include tablet {
+        padding-bottom: 102px;
+    }
+
     @include desktop-larg {
-            gap: 10px;
-        }
- 
-   @include tab1100{
-   flex-direction : column;
-   align-items: center;
-   }
+        gap: 10px;
+    }
+
+    @include tab1100 {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .hero-img {
         @include desktop-larg {
             height: 330px;
         }
-       @include tablet {
+
+        @include tablet {
             height: 220px;
-margin-top: 10px
+            margin-top: 10px
         }
     }
 }
- 
 
-.hero-text{
-@include tab1100{
- display: flex;
-flex-direction: column;
-align-items: center;
-}
+
+.hero-text {
+    @include tab1100 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .hero-text h1 {
@@ -101,19 +111,22 @@ align-items: center;
     max-width: 601px;
     line-height: 59px;
     font-family: "Rubik", sans-serif;
-@include tablet{
-font-size: 20px !important;
-line-height: 35px !important;
-}
-@include tab1100{
-text-align: center;
- max-width: 700px !important;
-} 
+
+    @include tablet {
+        font-size: 20px !important;
+        line-height: 35px !important;
+    }
+
+    @include tab1100 {
+        text-align: center;
+        max-width: 700px !important;
+    }
+
     @include desktop-larg {
         font-size: 33px;
         max-width: 550px;
         line-height: 45px;
-     margin-block: 0px ;
+        margin-block: 0px;
     }
 
 }
@@ -124,13 +137,16 @@ text-align: center;
     line-height: 31px;
     max-width: 550px;
     font-family: "Poppins", sans-serif;
-@include tablet{
-font-size: 16px !important;
-}
-@include tab1100{
-text-align: center;
- max-width: 700px !important;
-}
+
+    @include tablet {
+        font-size: 16px !important;
+    }
+
+    @include tab1100 {
+        text-align: center;
+        max-width: 700px !important;
+    }
+
     @include desktop-larg {
         font-size: 18px;
         max-width: 450px;
@@ -144,11 +160,12 @@ text-align: center;
     margin-left: 18px;
     padding-block: 13px;
     padding-inline: 20px;
-@include tablet{
-    padding-block: 8px;
-    padding-inline: 10px;
-    font-size: 15px
-}
+
+    @include tablet {
+        padding-block: 8px;
+        padding-inline: 10px;
+        font-size: 15px
+    }
 
     &:hover {
         color: #2D2DB0E8;
@@ -159,11 +176,12 @@ text-align: center;
     @include btnStyle;
     padding-block: 13px;
     padding-inline: 32px;
-@include tablet{
-    padding-block: 8px;
-    padding-inline: 10px;
-    font-size: 15px
-}
+
+    @include tablet {
+        padding-block: 8px;
+        padding-inline: 10px;
+        font-size: 15px
+    }
 }
 
 .logos-parent {
@@ -171,18 +189,20 @@ text-align: center;
     flex-direction: column;
     align-items: center;
     padding-inline: 10px;
-   padding-block: 40px;
+    padding-block: 40px;
 
     .logos {
         display: flex;
         align-items: center;
         gap: 155px;
         padding-inline: 10px;
- @include tablet{ 
-flex-wrap: wrap;
-justify-content: center;
-      gap: 30px !important;
-}
+
+        @include tablet {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px !important;
+        }
+
         @include desktop-larg {
             gap: 78px;
         }
@@ -198,10 +218,12 @@ justify-content: center;
     font-size: 700;
     color: #183453;
     font-family: "Rubik", sans-serif;
- @include tablet{ 
-  text-align: center;
-  font-size:20px !important; 
-}
+
+    @include tablet {
+        text-align: center;
+        font-size: 20px !important;
+    }
+
     @include desktop-larg {
         font-size: 30px;
     }

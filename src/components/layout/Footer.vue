@@ -90,7 +90,6 @@ export default {
     justify-content: center;
     /** display: flex; */
     flex-direction: column;
-    margin-top: 10px;
     background: #183453;
     padding-block: 20px;
 
@@ -102,6 +101,7 @@ export default {
         grid-auto-rows: minmax(100px, auto);
         justify-content: space-between;
         padding-inline: 28px;
+        padding-top: 40px;
         z-index: 5;
 
         @include desktop-larg {
@@ -178,9 +178,10 @@ export default {
         justify-content: space-between;
         padding-inline: 28px;
         padding-block: 20px;
-  @include tablet {
-flex-direction : column;
-}
+
+        @include tablet {
+            flex-direction: column;
+        }
 
         &-span {
             color: white;
