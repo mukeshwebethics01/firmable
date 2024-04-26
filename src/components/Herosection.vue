@@ -54,6 +54,7 @@ import Button from 'primevue/button';
 
     @include larg1850 {
         min-height: 0vh;
+        background-size: auto;
     }
 
 

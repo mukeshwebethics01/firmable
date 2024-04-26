@@ -12,98 +12,96 @@
 
 
             <div class="small-card-container">
-                <div>
+                <div class="seprate-card">
 
-                    <div>
-                        <Card class="card second-card card-wrapper" style=" overflow: hidden">
-                            <template #header>
-                                <img class="card-img" alt="user header" src="../assets/images/sales-icon.svg" />
-                            </template>
-                            <template #title>Sales</template>
-                            <template #content>
-                                <p class="m-0">
-                                    Less searching, more time selling. For sales to prospect, prioritise, and connect
-                                    with
-                                    their
-                                    ideal customer.
-                                </p>
-                            </template>
-                            <template #footer>
-                                <div class="flex gap-3 mt-1 learn-more">
-                                    <span>Learn More</span>
-                                    <img alt="user header" src="../assets/images/leftarrowicon.svg" />
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card class="card third-card card-wrapper" style=" overflow: hidden">
-                            <template #header>
-                                <img class="card-img" alt="user header" src="../assets/images/sales-icon.svg" />
-                            </template>
-                            <template #title>Sales</template>
-                            <template #content>
-                                <p class="m-0">
-                                    Less searching, more time selling. For sales to prospect, prioritise, and connect
-                                    with
-                                    their
-                                    ideal customer.
-                                </p>
-                            </template>
-                            <template #footer>
-                                <div class="flex gap-3 mt-1 learn-more">
-                                    <span>Learn More</span>
-                                    <img alt="user header" src="../assets/images/leftarrowicon.svg" />
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
+
+                    <Card class="card second-card card-wrapper" style=" overflow: hidden">
+                        <template #header>
+                            <img class="card-img" alt="user header" src="../assets/images/sales-icon.svg" />
+                        </template>
+                        <template #title>Sales</template>
+                        <template #content>
+                            <p class="m-0">
+                                Less searching, more time selling. For sales to prospect, prioritise, and connect
+                                with
+                                their
+                                ideal customer.
+                            </p>
+                        </template>
+                        <template #footer>
+                            <div class="flex gap-3 mt-1 learn-more">
+                                <span>Learn More</span>
+                                <img alt="user header" src="../assets/images/leftarrowicon.svg" />
+                            </div>
+                        </template>
+                    </Card>
+
+                    <Card class="card third-card card-wrapper" style=" overflow: hidden">
+                        <template #header>
+                            <img class="card-img" alt="user header" src="../assets/images/recruimenticon.svg" />
+                        </template>
+                        <template #title>Recruitment</template>
+                        <template #content>
+                            <p class="m-0">
+                                Less searching, more time selling. For sales to prospect, prioritise, and connect
+                                with
+                                their
+                                ideal customer.
+                            </p>
+                        </template>
+                        <template #footer>
+                            <div class="flex gap-3 mt-1 learn-more">
+                                <span>Learn More</span>
+                                <img alt="user header" src="../assets/images/leftarrowicon.svg" />
+                            </div>
+                        </template>
+                    </Card>
+
                 </div>
-                <div>
-                    <div>
-                        <Card class="card fourth-card card-wrapper" style=" overflow: hidden">
-                            <template #header>
-                                <img class="card-img" alt="user header" src="../assets/images/sales-icon.svg" />
-                            </template>
-                            <template #title>Sales</template>
-                            <template #content>
-                                <p class="m-0">
-                                    Less searching, more time selling. For sales to prospect, prioritise, and connect
-                                    with
-                                    their
-                                    ideal customer.
-                                </p>
-                            </template>
-                            <template #footer>
-                                <div class="flex gap-3 mt-1 learn-more">
-                                    <span>Learn More</span>
-                                    <img alt="user header" src="../assets/images/leftarrowicon.svg" />
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card class="card five-card card-wrapper" style=" overflow: hidden">
-                            <template #header>
-                                <img class="card-img" alt="user header" src="../assets/images/sales-icon.svg" />
-                            </template>
-                            <template #title>Sales</template>
-                            <template #content>
-                                <p class="m-0">
-                                    Less searching, more time selling. For sales to prospect, prioritise, and connect
-                                    with
-                                    their
-                                    ideal customer.
-                                </p>
-                            </template>
-                            <template #footer>
-                                <div class="flex gap-3 mt-1 learn-more">
-                                    <span>Learn More</span>
-                                    <img alt="user header" src="../assets/images/leftarrowicon.svg" />
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
+                <div class="seprate-card">
+
+                    <Card class="card fourth-card card-wrapper" style=" overflow: hidden">
+                        <template #header>
+                            <img class="card-img" alt="user header" src="../assets/images/marketingicon.svg" />
+                        </template>
+                        <template class="marketing-title" #title>Marketing</template>
+                        <template class="marketinf-para" #content>
+                            <p class="m-0">
+                                Less searching, more time selling. For sales to prospect, prioritise, and connect
+                                with
+                                their
+                                ideal customer.
+                            </p>
+                        </template>
+                        <template #footer>
+                            <div class="flex gap-3 mt-1 learn-more marketing-learn-more">
+                                <span>Learn More</span>
+                                <img alt="user header" src="../assets/images/leftarrowicon.svg" />
+                            </div>
+                        </template>
+                    </Card>
+
+                    <Card class="card five-card card-wrapper" style=" overflow: hidden">
+                        <template #header>
+                            <img class="card-img" alt="user header" src="../assets/images/marketInllicon.svg" />
+                        </template>
+                        <template #title>Market Intelligence</template>
+                        <template #content>
+                            <p class="m-0">
+                                Less searching, more time selling. For sales to prospect, prioritise, and connect
+                                with
+                                their
+                                ideal customer.
+                            </p>
+                        </template>
+                        <template #footer>
+                            <div class="flex gap-3 mt-1 learn-more">
+                                <span>Learn More</span>
+                                <img alt="user header" src="../assets/images/leftarrowicon.svg" />
+                            </div>
+                        </template>
+                    </Card>
+
                 </div>
             </div>
         </div>
@@ -142,6 +140,14 @@ import Card from 'primevue/card';
             top: 29px;
         }
 
+        @media (max-width:1400px) {
+            &::before {
+                left: -12px;
+                top: 39px;
+            }
+
+        }
+
         &::after {
             content: url("../assets/images/i-img.svg");
             display: block;
@@ -152,6 +158,14 @@ import Card from 'primevue/card';
             right: 85px;
         }
 
+        @media (max-width:1400px) {
+            &::after {
+                bottom: 27px;
+                right: -8px;
+            }
+
+        }
+
         .h2tag {
             font-size: 32px;
             font-weight: 700;
@@ -159,6 +173,7 @@ import Card from 'primevue/card';
             display: flex;
             justify-content: center;
             padding-left: 22px;
+            color: #183555;
         }
 
         .first {
@@ -172,7 +187,7 @@ import Card from 'primevue/card';
 
             @media (max-width:1400px) {
                 height: 787px;
-                width: 100% !important;
+                max-width: 100%;
             }
 
 
@@ -184,6 +199,20 @@ import Card from 'primevue/card';
     }
 
 }
+
+@media (max-width:1400px) {
+    .seprate-card {
+        width: 50%;
+    }
+}
+
+@media (max-width:700px) {
+    .seprate-card {
+        width: 100%;
+    }
+}
+
+
 
 
 .learn-more span {
@@ -204,11 +233,12 @@ import Card from 'primevue/card';
     gap: 30px;
 
 
+
     .card-wrapper {
         max-width: 385px !important;
 
         @media (max-width:1400px) {
-            width: 100%;
+            max-width: 100% !important;
         }
 
     }
@@ -221,7 +251,20 @@ import Card from 'primevue/card';
 
     .fourth-card {
         margin-bottom: 30px;
+        background: #73BFB8;
     }
+}
 
+
+
+@media (max-width:700px) {
+    .small-card-container {
+        display: flex;
+        flex-direction: column !important;
+    }
+}
+
+.marketing-title {
+    color: white;
 }
 </style>
