@@ -114,7 +114,7 @@ const items = ref([
     top: 0;
     width: 100%;
     z-index: 5;
-    max-width: 1440px;
+    max-width: 1280px;
 }
 
 
@@ -130,7 +130,7 @@ const items = ref([
     padding-inline: 25px;
     background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
     border-radius: 0px;
-    max-width: 1440px;
+    max-width: 1280px;
     margin: auto;
 
     @include tablet {

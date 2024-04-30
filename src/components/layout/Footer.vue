@@ -126,7 +126,7 @@ export default {
     }
 
     .fmax-container {
-        max-width: 1440px;
+        max-width: 1280px;
         margin: auto;
     }
 

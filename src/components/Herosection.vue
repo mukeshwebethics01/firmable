@@ -27,7 +27,7 @@
 
     <div>
         <div class="logos-parent">
-            <h2>Australia’s #1 business database as trusted by</h2>
+            <h2>Australia’s <span class="busUnderline">#1 business</span> database as trusted by</h2>
             <div class="logos">
                 <img src="../assets/images/brandlogoone.svg" alt="">
                 <img src="../assets/images/builddxact.svg" alt="">
@@ -40,6 +40,7 @@
 </template>
 <script setup>
 import Button from 'primevue/button';
+// import "../assets/images/businesunderlineImg.svg"
 </script>
 <style lang="scss" scoped>
 @import "../assets/scss/style.scss";
@@ -98,6 +99,19 @@ import Button from 'primevue/button';
 
 
 .hero-text {
+
+    animation: slidein 1s !important;
+
+    @keyframes slidein {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(10%);
+        }
+    }
+
     @include tab1100 {
         display: flex;
         flex-direction: column;
@@ -112,6 +126,7 @@ import Button from 'primevue/button';
     max-width: 601px;
     line-height: 59px;
     font-family: "Rubik", sans-serif;
+
 
     @include tablet {
         font-size: 20px !important;
@@ -214,11 +229,19 @@ import Button from 'primevue/button';
 
 }
 
-.logos-parent h2 {
+.logos-parent h2,
+span {
     font-size: 40px;
     font-size: 700;
     color: #183453;
     font-family: "Rubik", sans-serif;
+
+    .busUnderline {
+        background-image: url("../assets/images/businesunderlineImg.svg");
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: contain;
+    }
 
     @include tablet {
         text-align: center;
