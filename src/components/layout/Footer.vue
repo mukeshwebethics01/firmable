@@ -1,4 +1,19 @@
 <template>
+    <div class="background">
+        <div class="bgsection">
+            <div class="textsection">
+                <h2>Grow your business faster with Firmable data </h2>
+                <p>With the largest Australian B2B database and the only local support team, it’s easy to get started
+                    with
+                    Firmable. </p>
+            </div>
+            <div>
+                <Button class="footer-btn acces-bnt" label="Warning" severity="warning" rounded>Get early access
+                </Button>
+            </div>
+        </div>
+
+    </div>
     <div class="footer-container">
         <div class="fmax-container">
 
@@ -79,11 +94,95 @@ export default {
         Button
     },
 }
-
+// import "../../assets/images/signarrow.svg"
 </script>
 <style lang="scss" scoped>
 @import "../../assets/scss/style.scss";
 @import "../../assets/scss/mediaqueries.scss";
+
+
+.background {
+    background-image: url("../../assets/images/background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-block: 35px;
+    padding-inline: 20px;
+
+    .bgsection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 97px;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .textsection {
+            max-width: 578px;
+            position: relative;
+
+            &::after {
+                content: url("../../assets/images/signarrow.svg") !important;
+                position: absolute;
+                right: -49px;
+                top: 121px;
+
+            }
+
+            @include tablet {
+                &::after {
+                    content: url('') !important;
+                }
+            }
+
+        }
+
+
+
+        .textsection h2 {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+            line-height: 60px;
+            font-family: "Rubik", sans-serif;
+            margin-block: 0px;
+
+            @include tablet {
+                font-size: 25px;
+                line-height: 40px;
+                text-align: center;
+            }
+        }
+
+        .textsection p {
+            color: white;
+            font-size: 20px;
+            line-height: 33px;
+            font-family: "Poppins-Regular", sans-serif;
+
+            @include tablet {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    }
+
+    .acces-bnt {
+        background: #FFC000;
+        outline: none;
+        border: none;
+        height: 50px;
+        width: 170px;
+        color: #183453;
+
+    }
+
+}
+
+
 
 .footer-container {
     width: 100%;
@@ -160,10 +259,19 @@ export default {
         margin-top: 10px
     }
 
+    .socailmedia-icons img {
+        cursor: pointer;
+    }
+
     .footer-btn {
         @include btnStyle;
         padding-block: 14px;
         padding-inline: 18px;
+
+        &:hover {
+            background: #e6ac01;
+            color: white;
+        }
 
     }
 

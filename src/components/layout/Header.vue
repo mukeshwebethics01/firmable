@@ -234,6 +234,11 @@ const items = ref([
         display: flex;
         justify-content: center;
 
+        &:hover {
+            background: #e6ac01;
+            color: white;
+        }
+
         @include tablet {
             display: none !important;
             padding-inline: 0px;

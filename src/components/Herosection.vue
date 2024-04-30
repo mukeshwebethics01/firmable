@@ -100,7 +100,7 @@ import Button from 'primevue/button';
 
 .hero-text {
 
-    animation: slidein 1s !important;
+    animation: slidein 1.5s !important;
 
     @keyframes slidein {
         from {
@@ -108,7 +108,7 @@ import Button from 'primevue/button';
         }
 
         to {
-            transform: translateX(10%);
+            transform: translateX(6%);
         }
     }
 
@@ -197,6 +197,11 @@ import Button from 'primevue/button';
         padding-block: 8px;
         padding-inline: 10px;
         font-size: 15px
+    }
+
+    &:hover {
+        background: #e6ac01;
+        color: white;
     }
 }
 
