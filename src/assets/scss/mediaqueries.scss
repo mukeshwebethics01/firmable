@@ -28,6 +28,12 @@
 }
 }
 
+@mixin large1400 {
+@media screen and (max-width: 1400px) {
+    @content;
+}
+}
+
 @mixin larg1850{
 @media screen and (max-width: 1850px) {
     @content;

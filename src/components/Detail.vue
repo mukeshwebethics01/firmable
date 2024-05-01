@@ -64,6 +64,7 @@
 
 <style lang="scss" scoped>
 @import "../assets/scss/mediaqueries.scss";
+@import "../assets/scss/style.scss";
 
 .detail-container {
     display: flex;
@@ -72,11 +73,9 @@
     padding-block: 20px;
 
     .h2tag {
-        font-size: 40px;
-        font-family: 700px;
+        @include h2tag;
         line-height: 60px;
         text-align: center;
-        color: #183453;
         max-width: 900px;
 
         @include tab1100 {

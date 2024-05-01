@@ -7,6 +7,7 @@ import HeroSection from './components/Herosection.vue';
 import Cards from "./components/Cards.vue";
 import Detail from "./components/Detail.vue";
 import Data from "./components/Data.vue";
+import Twite from "./components/Twite.vue";
 </script>
 <template>
    <Header />
@@ -14,6 +15,7 @@ import Data from "./components/Data.vue";
    <Cards />
    <Detail />
    <Data />
+   <Twite />
    <Footer />
 </template>
 

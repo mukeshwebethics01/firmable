@@ -73,6 +73,7 @@
 <script setup></script>
 <style lang="scss" scoped>
 @import "../assets/scss/mediaqueries.scss";
+@import "../assets/scss/style.scss";
 
 .data-section {
     display: flex;
@@ -99,12 +100,9 @@
 
 
         .h2tag {
-            font-size: 40px;
-            font-weight: 700;
-            color: #183453;
+            @include h2tag;
             line-height: 60px;
             text-align: center;
-            font-family: "Rubik", sans-serif;
             max-width: 588px;
             margin-block: 0px;
 

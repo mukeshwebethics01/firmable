@@ -20,9 +20,9 @@
                         <template #header>
                             <img class="card-img" alt="user header" src="../assets/images/sales-icon.svg" />
                         </template>
-                        <template #title>Sales</template>
+                        <template #title> <span class="cardtitle">Sales</span> </template>
                         <template #content>
-                            <p class="m-0">
+                            <p class="m-0 cardpara">
                                 Less searching, more time selling. For sales to prospect, prioritise, and connect
                                 with
                                 their
@@ -32,7 +32,7 @@
                         <template #footer>
                             <div class="flex gap-3 mt-1 learn-more">
                                 <span>Learn More</span>
-                                <img alt="user header" src="../assets/images/leftarrowicon.svg" />
+                                <i class="pi pi-arrow-right righticon"></i>
                             </div>
                         </template>
                     </Card>
@@ -41,9 +41,9 @@
                         <template #header>
                             <img class="card-img" alt="user header" src="../assets/images/recruimenticon.svg" />
                         </template>
-                        <template #title>Recruitment</template>
+                        <template #title> <span class="cardtitle">Recruitment</span> </template>
                         <template #content>
-                            <p class="m-0">
+                            <p class="m-0 cardpara">
                                 Less searching, more time selling. For sales to prospect, prioritise, and connect
                                 with
                                 their
@@ -53,7 +53,7 @@
                         <template #footer>
                             <div class="flex gap-3 mt-1 learn-more">
                                 <span>Learn More</span>
-                                <img alt="user header" src="../assets/images/leftarrowicon.svg" />
+                                <i class="pi pi-arrow-right righticon"></i>
                             </div>
                         </template>
                     </Card>
@@ -88,9 +88,9 @@
                         <template #header>
                             <img class="card-img" alt="user header" src="../assets/images/marketInllicon.svg" />
                         </template>
-                        <template #title>Market Intelligence</template>
+                        <template #title> <span class="cardtitle">Market Intelligence</span> </template>
                         <template #content>
-                            <p class="m-0">
+                            <p class="m-0 cardpara">
                                 Less searching, more time selling. For sales to prospect, prioritise, and connect
                                 with
                                 their
@@ -100,7 +100,7 @@
                         <template #footer>
                             <div class="flex gap-3 mt-1 learn-more">
                                 <span>Learn More</span>
-                                <img alt="user header" src="../assets/images/leftarrowicon.svg" />
+                                <i class="pi pi-arrow-right righticon"></i>
                             </div>
                         </template>
                     </Card>
@@ -113,10 +113,12 @@
 <script setup>
 
 import Card from 'primevue/card';
+import 'primeicons/primeicons.css'
 </script>
 <style lang="scss" scoped>
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/mediaqueries.scss";
+@import "../assets/scss/style.scss";
 
 .card-container-parent {
     background: #F9F9F9;
@@ -238,6 +240,10 @@ import Card from 'primevue/card';
     margin-right: 5px;
 }
 
+.righticon {
+    color: #08A5E2;
+}
+
 .card-img {
     padding: 24px;
 }
@@ -255,16 +261,37 @@ import Card from 'primevue/card';
     .card-wrapper {
         max-width: 385px !important;
 
+        &:hover {
+            background: #73BFB8;
+            transition: 500ms ease-in-out;
+        }
+
         @include desktop-larg {
             max-width: 100% !important;
         }
 
     }
 
+    .card-wrapper:hover .cardtitle,
+    .cardpara {
+        color: white;
+    }
+
+    .card-wrapper:hover .cardpara {
+        color: white !important;
+    }
+
+    .card-wrapper:hover .righticon {
+        color: white !important;
+    }
+
+    .card-wrapper:hover .learn-more span {
+        color: white;
+    }
+
+
     .second-card {
         margin-bottom: 30px;
-
-
     }
 
     .fourth-card {
@@ -272,6 +299,12 @@ import Card from 'primevue/card';
         background: #73BFB8;
     }
 }
+
+
+.cardpara {
+    color: black !important;
+}
+
 
 .marketing-title {
     color: white !important;

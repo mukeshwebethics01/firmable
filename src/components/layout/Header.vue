@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card nav-bg">
         <div class="card-child">
             <Menubar :model="items" class="navbar">
                 <template #start>
@@ -86,17 +86,38 @@ const items = ref([
 ]);
 
 
+
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('.nav-bg');
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/mediaqueries.scss';
 @import "../../assets/scss/style.scss";
 
 
+.nav-bg {
+    transition: background-color 0.3s ease;
+
+
+}
+
+.nav-bg.scrolled {
+    background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
+}
+
 
 .card {
     display: flex;
     justify-content: center;
-    background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
+
     height: 70px;
     position: fixed !important;
     width: 100%;
@@ -108,7 +129,6 @@ const items = ref([
 .card-child {
     display: flex;
     justify-content: center;
-    background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
     height: 70px;
     position: fixed;
     top: 0;
@@ -128,7 +148,7 @@ const items = ref([
     height: 70px;
     z-index: 1;
     padding-inline: 25px;
-    background: linear-gradient(179deg, #2D2DB0 -34.67%, #2C8CF4 134.73%);
+    background-color: transparent;
     border-radius: 0px;
     max-width: 1280px;
     margin: auto;
@@ -235,7 +255,7 @@ const items = ref([
         justify-content: center;
 
         &:hover {
-            background: #e6ac01;
+            background: #73BFB8;
             color: white;
         }
 

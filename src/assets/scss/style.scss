@@ -20,3 +20,16 @@ format('truetype');
         color: #183453;
         border: none;
 }
+
+@mixin btnHover {
+      background: #73BFB8;
+            color: white;
+}
+
+
+@mixin h2tag{
+    font-size: 40px;
+    font-size: 700;
+    color: #183453;
+    font-family: "Rubik", sans-serif;
+}

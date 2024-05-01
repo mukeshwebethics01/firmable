@@ -99,7 +99,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/scss/style.scss";
 @import "../../assets/scss/mediaqueries.scss";
-
+@import "../../assets/scss/mediaqueries.scss";
 
 .background {
     background-image: url("../../assets/images/background.svg");
@@ -178,6 +178,9 @@ export default {
         width: 170px;
         color: #183453;
 
+        &:hover {
+            @include btnHover;
+        }
     }
 
 }
@@ -269,8 +272,7 @@ export default {
         padding-inline: 18px;
 
         &:hover {
-            background: #e6ac01;
-            color: white;
+            @include btnHover;
         }
 
     }

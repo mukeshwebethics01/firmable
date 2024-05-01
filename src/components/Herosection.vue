@@ -49,7 +49,6 @@ import Button from 'primevue/button';
 .bgcolorimg {
     background-image: url('../assets/images/herosectionbgcolor.svg');
     background-repeat: no-repeat;
-    margin-top: 69px;
     min-height: 75vh;
     background-size: contain;
 
@@ -71,6 +70,7 @@ import Button from 'primevue/button';
     gap: 20px;
     padding-inline: 10px !important;
     align-items: center;
+    padding-top: 136px;
 
     @include tablet {
         padding-bottom: 102px;
@@ -108,7 +108,7 @@ import Button from 'primevue/button';
         }
 
         to {
-            transform: translateX(6%);
+            transform: translateX(5%);
         }
     }
 
@@ -200,8 +200,7 @@ import Button from 'primevue/button';
     }
 
     &:hover {
-        background: #e6ac01;
-        color: white;
+        @include btnHover;
     }
 }
 
@@ -234,12 +233,27 @@ import Button from 'primevue/button';
 
 }
 
+.logos-parent h2 {
+
+    animation: slide-down 1s forwards;
+
+}
+
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
 .logos-parent h2,
 span {
-    font-size: 40px;
-    font-size: 700;
-    color: #183453;
-    font-family: "Rubik", sans-serif;
+    @include h2tag;
 
     .busUnderline {
         background-image: url("../assets/images/businesunderlineImg.svg");
