@@ -74,13 +74,16 @@
                 </div>
             </div>
 
-            <div>
+
+        </div>
+        <div>
+            <div class="footer-logo-parent">
                 <img class="footer-logo" src="../../assets/images/footerfirmlogo.svg" alt="">
-                <hr class="hrline">
-                <div class="copyright">
-                    <span class="copyright-span">©2023 All Rights Reserved by Firmable</span>
-                    <span class="copyright-span">Privacy Policy | Terms of service</span>
-                </div>
+            </div>
+            <hr class="hrline">
+            <div class="copyright">
+                <span class="copyright-span">©2023 All Rights Reserved by Firmable</span>
+                <span class="copyright-span">Privacy Policy | Terms of service</span>
             </div>
         </div>
     </div>
@@ -127,7 +130,7 @@ export default {
             &::after {
                 content: url("../../assets/images/signarrow.svg") !important;
                 position: absolute;
-                right: -49px;
+                right: -63px;
                 top: 121px;
 
             }
@@ -302,11 +305,18 @@ export default {
 
     }
 
+    .footer-logo-parent,
+    .copyright {
+        max-width: 1280px;
+        margin: auto;
+    }
+
     .footer-logo {
         padding-inline: 28px;
         padding-block: 15px;
 
     }
+
 
 }
 </style>

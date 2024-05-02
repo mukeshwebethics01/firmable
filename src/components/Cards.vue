@@ -264,6 +264,7 @@ import 'primeicons/primeicons.css'
         &:hover {
             background: #73BFB8;
             transition: 500ms ease-in-out;
+            cursor: pointer;
         }
 
         @include desktop-larg {

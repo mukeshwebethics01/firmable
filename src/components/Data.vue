@@ -137,6 +137,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: white;
+
         }
 
         .boxNextGen {
@@ -153,6 +155,7 @@
             width: 100%;
             align-items: center;
             margin-bottom: 40px;
+            z-index: 1;
 
             @include tab700 {
                 grid-template-columns: 1fr;

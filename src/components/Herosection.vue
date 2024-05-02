@@ -27,7 +27,8 @@
 
     <div>
         <div class="logos-parent">
-            <h2>Australia’s <span class="busUnderline">#1 business</span> database as trusted by</h2>
+            <h2 class="h2taganimation">Australia’s <span class="busUnderline">#1 business</span> database as trusted by
+            </h2>
             <div class="logos">
                 <img src="../assets/images/brandlogoone.svg" alt="">
                 <img src="../assets/images/builddxact.svg" alt="">
@@ -233,7 +234,7 @@ import Button from 'primevue/button';
 
 }
 
-.logos-parent h2 {
+.h2taganimation {
 
     animation: slide-down 1s forwards;
 

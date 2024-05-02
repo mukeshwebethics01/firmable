@@ -16,7 +16,7 @@
                 </template>
                 <template #item="{ item, props, hasSubmenu, root }" class="px-3" :focused="false">
                     <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings" v-bind="props.action"
-                        :style="item.label === 'Solutions' ? { color: 'white', borderBottom: '1px solid white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
+                        :style="item.label === 'Solutions' ? { color: 'white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
                         @click="(e) => { console.log('Link clicked!', e.preventDefault()); }">
                         <span :class="item.icon"></span>
                         <span class="ml-2">{{ item.label }}</span>
@@ -37,6 +37,7 @@
                     </div>
                 </template>
             </Menubar>
+            <!-- <h4 class="login login-color">Login</h4> -->
             <Button class="header-button" label="Warning" severity="warning" rounded>Get early access </Button>
         </div>
     </div>
@@ -94,7 +95,20 @@ window.addEventListener('scroll', function () {
     } else {
         header.classList.remove('scrolled');
     }
+
 });
+
+window.addEventListener('scroll', function () {
+    var login = document.querySelector('.login');
+    if (window.scrollY > 0) {
+        login.classList.add('login-color');
+    } else {
+        login.classList.remove('login-color');
+    }
+});
+
+
+
 
 
 </script>
@@ -156,8 +170,6 @@ window.addEventListener('scroll', function () {
     @include tablet {
         justify-content: space-between;
     }
-
-
 
 
     .navbar-headings:hover {
@@ -268,5 +280,28 @@ window.addEventListener('scroll', function () {
             margin-right: 40px !important;
         }
     }
+
+    .login-color {
+        color: white !important;
+    }
+
+    .login {
+        color: #183453;
+        font-size: 17px;
+        font-family: "Rubik", sans-serif;
+        font-weight: 400;
+        margin-right: 10px;
+
+        &:hover {
+            color: #FFC000 !important;
+        }
+
+        @include tablet {
+            display: none;
+
+        }
+    }
+
+
 }
 </style>
