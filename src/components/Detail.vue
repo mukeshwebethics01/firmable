@@ -2,8 +2,9 @@
 
     <section class="detail-container">
         <div class="detail-container-child">
-
-            <h2 class="h2tag">Reach your <span>ideal customers</span> and candidates in a couple of clicks</h2>
+            <div class="hidden h2tag-container">
+                <h2 class="h2tag">Reach your <span>ideal customers</span> and candidates in a couple of clicks</h2>
+            </div>
             <div class="detail-row first">
                 <div class="row-one">
                     <h3 class="detail-heading">Access the largest local B2B database for businesses </h3>
@@ -59,12 +60,40 @@
 </template>
 
 <script setup>
-
+let sections = document.querySelector(".h2tag-container ")
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        if (top >= offset && top < offset + height) {
+            sec.classList.add("show-animate")
+        }
+        else {
+            sec.classList.remove("show-animate")
+        }
+    })
+}
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/style.scss";
+
+
+
+// .h2tag-container {
+//     transform: translateY(-100%);
+// }
+
+// .h2tag-container.show-animate {
+//     transform: translateY(0);
+// }
+
+
+
+
+
 
 .detail-container {
     display: flex;
@@ -100,7 +129,7 @@
         align-items: center;
         position: relative;
 
-        @include tab1100 {
+        @include tablet {
             .detail-img {
                 width: 290px;
             }
@@ -115,7 +144,7 @@
         }
 
         .first {
-            @include tab1100 {
+            @include tablet {
                 display: flex;
                 flex-direction: column-reverse;
             }
@@ -125,26 +154,26 @@
             content: url('../assets/images/fimg.svg');
             display: block;
             position: absolute;
-            left: 8px;
+            left: -12px;
             top: 186px;
         }
 
         .second {
-            @include tab1100 {
+            @include tablet {
                 display: flex;
                 flex-direction: column;
             }
         }
 
         .third {
-            @include tab1100 {
+            @include tablet {
                 display: flex;
                 flex-direction: column-reverse;
             }
         }
 
         .four {
-            @include tab1100 {
+            @include tablet {
                 display: flex;
                 flex-direction: column;
             }
@@ -169,7 +198,7 @@
             justify-content: center;
             gap: 150px;
 
-            @include tab1100 {
+            @include tablet {
                 gap: 0px;
             }
 
@@ -206,7 +235,7 @@
                 line-height: 29px;
                 color: #747474;
 
-                @include tab1100 {
+                @include tablet {
                     font-size: 15px;
                 }
             }

@@ -66,10 +66,10 @@
                             <img class="card-img" alt="user header" src="../assets/images/marketingicon.svg" />
                         </template>
                         <template #title>
-                            <h2 class="marketing-title">Marketing</h2>
+                            <span class=" cardtitle">Marketing</span>
                         </template>
                         <template class="" #content>
-                            <p class="m-0 marketinf-para">
+                            <p class="m-0 cardpara">
                                 Less searching, more time selling. For sales to prospect, prioritise, and connect
                                 with
                                 their
@@ -77,9 +77,9 @@
                             </p>
                         </template>
                         <template #footer>
-                            <div class="flex gap-3 mt-1 learn-more ">
-                                <span class="marketing-learn-more">Learn More</span>
-                                <img alt="user header" src="../assets/images/whiteRightarrow.svg" />
+                            <div class="flex gap-3 mt-1 learn-more">
+                                <span>Learn More</span>
+                                <i class="pi pi-arrow-right righticon"></i>
                             </div>
                         </template>
                     </Card>
@@ -119,6 +119,10 @@ import 'primeicons/primeicons.css'
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/style.scss";
+
+
+
+
 
 .card-container-parent {
     background: #F9F9F9;
@@ -238,14 +242,20 @@ import 'primeicons/primeicons.css'
 .learn-more span {
     color: #08A5E2;
     margin-right: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: "Rubik", sans-serif;
 }
 
 .righticon {
     color: #08A5E2;
+    font-weight: 600;
+    font-size: 15px;
 }
 
 .card-img {
-    padding: 24px;
+    padding-left: 18px;
+    padding-top: 14px;
 }
 
 .card {
@@ -273,6 +283,15 @@ import 'primeicons/primeicons.css'
 
     }
 
+    .cardpara {
+        color: #747474 !important;
+        font-family: "Poppins-Regular", sans-serif;
+
+        @include tab700 {
+            margin-block: 0px;
+        }
+    }
+
     .card-wrapper:hover .cardtitle,
     .cardpara {
         color: white;
@@ -297,7 +316,6 @@ import 'primeicons/primeicons.css'
 
     .fourth-card {
         margin-bottom: 30px;
-        background: #73BFB8;
     }
 }
 
@@ -313,9 +331,9 @@ import 'primeicons/primeicons.css'
     margin-block: 0px;
 }
 
-.marketinf-para {
-    color: white;
-}
+// .marketinf-para {
+//     color: white;
+// }
 
 .marketing-learn-more {
     color: white !important;

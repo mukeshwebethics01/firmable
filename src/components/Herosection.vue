@@ -109,7 +109,7 @@ import Button from 'primevue/button';
         }
 
         to {
-            transform: translateX(5%);
+            transform: translateX(0%);
         }
     }
 
