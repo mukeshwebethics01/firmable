@@ -1,7 +1,8 @@
 <template>
     <section class="data-section">
         <div class="data-container">
-            <h2 class="h2tag">Go beyond basic data with <span>deep company attributes</span></h2>
+            <h2 :class="[animateClassVal, 'h2tag']" ref="elementRef">Go beyond basic data with <span>deep company
+                    attributes</span></h2>
             <h4 class="h4tag">Example data attributes </h4>
             <div class="first-row">
                 <div class="box-parent">
@@ -70,10 +71,57 @@
         </div>
     </section>
 </template>
-<script setup></script>
+<script setup>
+
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const animateClassVal = ref('');
+
+
+const elementRef = ref(null);
+const getPosition = () => {
+    if (elementRef.value) {
+        const rect = elementRef.value.getBoundingClientRect();
+        console.log("rect", rect);
+        console.log("window.innerHeight", window.innerHeight)
+        if (window.innerHeight > rect.y + 100) {
+            animateClassVal.value = 'h2tagLocal'
+        }
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', getPosition);
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll');
+})
+
+</script>
 <style lang="scss" scoped>
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/style.scss";
+
+
+.h2tagLocal {
+
+    animation: slidein 1.5s !important;
+
+    @keyframes slidein {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0%);
+        }
+    }
+}
+
+
+
+
 
 .data-section {
     display: flex;

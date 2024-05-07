@@ -84,6 +84,7 @@ import Button from 'primevue/button';
     @include tab1100 {
         flex-direction: column;
         align-items: center;
+        padding-top: 90px;
     }
 
     .hero-img {
@@ -179,7 +180,7 @@ import Button from 'primevue/button';
     padding-inline: 20px;
 
     @include tablet {
-        padding-block: 8px;
+        padding-block: 10px;
         padding-inline: 10px;
         font-size: 15px
     }
@@ -195,7 +196,7 @@ import Button from 'primevue/button';
     padding-inline: 32px;
 
     @include tablet {
-        padding-block: 8px;
+        padding-block: 10px;
         padding-inline: 10px;
         font-size: 15px
     }

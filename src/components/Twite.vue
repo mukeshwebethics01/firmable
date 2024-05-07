@@ -2,7 +2,7 @@
     <section class="section">
         <div class="container">
             <div class="left">
-                <h2>Hear how our customers <span>drive impact</span>
+                <h2 :class="[animateClassVal]" ref="elementRef">Hear how our customers <span>drive impact</span>
                     with better data </h2>
                 <p>Read more success stories <i class="pi pi-arrow-right"></i> </p>
             </div>
@@ -23,11 +23,56 @@
 <script setup>
 import 'primeicons/primeicons.css'
 
+
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const animateClassVal = ref('');
+
+
+const elementRef = ref(null);
+const getPosition = () => {
+    if (elementRef.value) {
+        const rect = elementRef.value.getBoundingClientRect();
+        console.log("rect", rect);
+        console.log("window.innerHeight", window.innerHeight)
+        if (window.innerHeight > rect.y + 100) {
+            animateClassVal.value = 'h2tagLocal'
+        }
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', getPosition);
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll');
+})
+
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/style.scss";
+
+
+
+.h2tagLocal {
+
+    animation: slidein 1.5s !important;
+
+    @keyframes slidein {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0%);
+        }
+    }
+}
+
+
 
 .section {
     background-image: url("../assets/images/testimonial-bg.svg");

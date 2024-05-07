@@ -1,8 +1,9 @@
 <template>
     <div class="background">
-        <div class="bgsection">
+        <div :class="[animateClassVal, 'bgsection']" ref="elementRef">
             <div class="textsection">
-                <h2>Grow your business faster with Firmable data </h2>
+                <h2>Grow your business faster with Firmable
+                    data </h2>
                 <p>With the largest Australian B2B database and the only local support team, it’s easy to get started
                     with
                     Firmable. </p>
@@ -92,17 +93,64 @@
 <script>
 
 import Button from 'primevue/button';
+import { ref, onMounted, onUnmounted } from 'vue';
 export default {
     components: {
         Button
     },
 }
-// import "../../assets/images/signarrow.svg"
+
+
+
+const animateClassVal = ref('');
+
+
+const elementRef = ref(null);
+const getPosition = () => {
+    if (elementRef.value) {
+        const rect = elementRef.value.getBoundingClientRect();
+        console.log("rect", rect);
+        console.log("window.innerHeight", window.innerHeight)
+        if (window.innerHeight > rect.y + 100) {
+            animateClassVal.value = 'h2tagLocal'
+        }
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', getPosition);
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll');
+})
+
+
+
 </script>
 <style lang="scss" scoped>
 @import "../../assets/scss/style.scss";
 @import "../../assets/scss/mediaqueries.scss";
 @import "../../assets/scss/mediaqueries.scss";
+
+
+
+.h2tagLocal {
+
+    animation: slidein 1.5s !important;
+
+    @keyframes slidein {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0%);
+        }
+    }
+}
+
+
 
 .background {
     background-image: url("../../assets/images/background.svg");
@@ -174,12 +222,15 @@ export default {
     }
 
     .acces-bnt {
-        background: #FFC000;
-        outline: none;
-        border: none;
-        height: 50px;
-        width: 170px;
-        color: #183453;
+        @include btnStyle;
+        padding-block: 14px;
+        padding-inline: 18px;
+
+        @include tablet {
+            padding-block: 10px;
+            padding-inline: 10px;
+            font-size: 15px;
+        }
 
         &:hover {
             @include btnHover;
@@ -273,6 +324,12 @@ export default {
         @include btnStyle;
         padding-block: 14px;
         padding-inline: 18px;
+
+        @include tablet {
+            padding-block: 10px;
+            padding-inline: 10px;
+            font-size: 15px;
+        }
 
         &:hover {
             @include btnHover;

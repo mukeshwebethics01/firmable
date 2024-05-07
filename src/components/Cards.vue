@@ -2,7 +2,7 @@
     <div class="card-container-parent">
         <div class="card-container">
             <div class="first">
-                <h2 class="h2tag">A data solution for
+                <h2 :class="[animateClassVal, 'second h2tag']" ref="elementRef">A data solution for
                     every team,
                     all in one platform
                 </h2>
@@ -112,14 +112,52 @@
 </template>
 <script setup>
 
+
 import Card from 'primevue/card';
 import 'primeicons/primeicons.css'
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const animateClassVal = ref('');
+
+
+const elementRef = ref(null);
+const getPosition = () => {
+    if (elementRef.value) {
+        const rect = elementRef.value.getBoundingClientRect();
+        if (window.innerHeight > rect.y + 100) {
+            animateClassVal.value = 'h2tagLocal'
+        }
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', getPosition);
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll');
+})
+
 </script>
 <style lang="scss" scoped>
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/mediaqueries.scss";
 @import "../assets/scss/style.scss";
 
+.h2tagLocal {
+
+    animation: slidein 1.5s !important;
+
+    @keyframes slidein {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0%);
+        }
+    }
+}
 
 
 
@@ -189,12 +227,6 @@ import 'primeicons/primeicons.css'
             }
         }
 
-        // .h2tag span {
-        //     font-size: 32px !important;
-        //     font-weight: 700;
-        //     color: #183555;
-        //     font-family: "Rubik", sans-serif;
-        // }
 
         .first {
             background: white;
@@ -331,11 +363,9 @@ import 'primeicons/primeicons.css'
     margin-block: 0px;
 }
 
-// .marketinf-para {
-//     color: white;
-// }
 
 .marketing-learn-more {
+
     color: white !important;
 }
 
