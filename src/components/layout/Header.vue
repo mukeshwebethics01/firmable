@@ -17,7 +17,7 @@
                 <template #item="{ item, props, hasSubmenu, root }" :focused="false">
                     <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings animation"
                         v-bind="props.action"
-                        :style="item.label === 'Solutions' ? { color: 'white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
+                        :style="item.label === 'Solutions' ? { color: 'white', borderBottom: '1px solid white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
                         @click="(e) => { console.log('Link clicked!', e.preventDefault()); }">
                         <span :class="item.icon"></span>
                         <span class="ml-2">{{ item.label }}</span>
@@ -242,7 +242,7 @@ window.addEventListener('scroll', function () {
             margin-inline: 10px;
             font-family: 'Rubik', sans-serif;
             padding: 0;
-            gap: 8px;
+            gap: 3px;
 
             @include tablet {
                 color: black !important;

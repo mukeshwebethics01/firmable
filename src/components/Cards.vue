@@ -3,7 +3,7 @@
         <div class="card-container">
             <div class="first">
                 <h2 :class="[animateClassVal, 'second h2tag']" ref="elementRef">A data solution for
-                    every team,
+                    <span class="everyteam">every team,</span> <br>
                     all in one platform
                 </h2>
 
@@ -172,7 +172,7 @@ onUnmounted(() => {
         display: flex;
         gap: 30px;
         justify-content: center;
-        padding-block: 60px;
+        padding-block: 90px;
         position: relative;
 
         @include desktop-larg {
@@ -183,14 +183,14 @@ onUnmounted(() => {
             content: url('../assets/images/fimg.svg');
             display: block;
             position: absolute;
-            left: 14px;
-            top: 38px;
+            left: 12px;
+            top: 66px;
         }
 
         @include desktop-larg {
             &::before {
                 left: -12px;
-                top: 39px;
+                top: 71px;
             }
 
         }
@@ -201,13 +201,13 @@ onUnmounted(() => {
             display: flex;
             align-items: end;
             position: absolute;
-            bottom: 30px;
+            bottom: 51px;
             right: 22px;
         }
 
         @include desktop-larg {
             &::after {
-                bottom: 27px;
+                bottom: 60px;
                 right: -8px;
             }
 
@@ -217,14 +217,22 @@ onUnmounted(() => {
             font-size: 32px;
             font-weight: 700;
             font-family: "Rubik", sans-serif;
-            display: flex;
             justify-content: center;
             padding-left: 22px;
+            line-height: 48px;
             color: #183555;
 
             @include tablet {
                 font-size: 20px;
+                line-height: 25px;
             }
+        }
+
+        .everyteam {
+            background-image: url('../assets/images/everyteamline.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+
         }
 
 
@@ -269,7 +277,13 @@ onUnmounted(() => {
 }
 
 
+.learn-more {
+    margin-top: 14px;
 
+    @include desktop-larg {
+        margin-top: 0px;
+    }
+}
 
 .learn-more span {
     color: #08A5E2;
@@ -318,11 +332,17 @@ onUnmounted(() => {
     .cardpara {
         color: #747474 !important;
         font-family: "Poppins-Regular", sans-serif;
+        margin-top: 6px;
 
         @include tab700 {
             margin-block: 0px;
             font-size: 12px;
         }
+    }
+
+    .cardtitle {
+        font-weight: 600;
+        font-family: "Rubik";
     }
 
     .card-wrapper:hover .cardtitle,

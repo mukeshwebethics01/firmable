@@ -186,6 +186,7 @@ onUnmounted(() => {
             justify-content: center;
             align-items: center;
             background: white;
+            font-weight: 600;
 
         }
 
@@ -229,6 +230,11 @@ onUnmounted(() => {
         .info img {
             height: 52px;
             width: 50px;
+        }
+
+        .info span {
+            font-size: 17px;
+            font-family: "Rubik";
         }
     }
 }
