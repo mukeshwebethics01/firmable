@@ -70,7 +70,6 @@ import Button from 'primevue/button';
     justify-content: center;
     gap: 20px;
     padding-inline: 10px !important;
-    align-items: center;
     padding-top: 136px;
 
     @include tablet {
@@ -128,6 +127,7 @@ import Button from 'primevue/button';
     max-width: 601px;
     line-height: 59px;
     font-family: "Rubik", sans-serif;
+    margin-bottom: 15px;
 
 
     @include tablet {
@@ -154,7 +154,8 @@ import Button from 'primevue/button';
     font-size: 20px;
     line-height: 31px;
     max-width: 550px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins-Regular", sans-serif;
+    margin-top: 0px;
 
     @include tablet {
         font-size: 16px !important;

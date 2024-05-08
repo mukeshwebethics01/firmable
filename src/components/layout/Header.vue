@@ -14,8 +14,9 @@
                         </div>
                     </div>
                 </template>
-                <template #item="{ item, props, hasSubmenu, root }" class="px-3" :focused="false">
-                    <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings" v-bind="props.action"
+                <template #item="{ item, props, hasSubmenu, root }" :focused="false">
+                    <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings animation"
+                        v-bind="props.action"
                         :style="item.label === 'Solutions' ? { color: 'white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
                         @click="(e) => { console.log('Link clicked!', e.preventDefault()); }">
                         <span :class="item.icon"></span>
@@ -84,11 +85,13 @@ const items = ref([
         label: 'Contact',
 
     }
+
 ]);
 
 
 
 window.addEventListener('scroll', function () {
+
     const header = document.querySelector('.nav-bg');
     if (window.scrollY > 0) {
         header.classList.add('scrolled');
@@ -109,12 +112,11 @@ window.addEventListener('scroll', function () {
 
 
 
-
-
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/mediaqueries.scss';
 @import "../../assets/scss/style.scss";
+
 
 
 .nav-bg {
@@ -228,6 +230,8 @@ window.addEventListener('scroll', function () {
 
 
 .p-menubar-root-list {
+
+
     li {
         padding: 0px 10px;
 
@@ -246,7 +250,31 @@ window.addEventListener('scroll', function () {
             }
         }
     }
+
+
+
 }
+
+.p-menubar-mobile-active {
+    // animation-name: slidY;
+    // animation-duration: 500ms;
+    // animation-timing-function: ease-in-out;
+    // transform-origin: top;
+}
+
+@keyframes slidY {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+
+
+
 
 .card {
     position: relative;

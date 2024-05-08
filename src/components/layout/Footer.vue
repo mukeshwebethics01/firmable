@@ -93,7 +93,6 @@
 <script>
 
 import Button from 'primevue/button';
-import { ref, onMounted, onUnmounted } from 'vue';
 export default {
     components: {
         Button
@@ -101,9 +100,9 @@ export default {
 }
 
 
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const animateClassVal = ref('');
-
 
 const elementRef = ref(null);
 const getPosition = () => {
@@ -126,8 +125,8 @@ onUnmounted(() => {
 })
 
 
-
 </script>
+
 <style lang="scss" scoped>
 @import "../../assets/scss/style.scss";
 @import "../../assets/scss/mediaqueries.scss";

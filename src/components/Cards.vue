@@ -321,6 +321,7 @@ onUnmounted(() => {
 
         @include tab700 {
             margin-block: 0px;
+            font-size: 12px;
         }
     }
 

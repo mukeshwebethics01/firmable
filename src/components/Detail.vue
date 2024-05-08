@@ -31,6 +31,7 @@
                 <div class="row-two">
                     <h3 class="detail-heading">Know your ideal customer better than ever before</h3>
                     <p class="detail-para">With deep firmographic data sets that go beyond the basics. Don’t just
+
                         profile by size, revenue,
                         industry and location – you now have access to modern company attributes like website traffic,
                         reviews, social followers, and more all in the one place. </p>
@@ -356,6 +357,10 @@ onUnmounted(() => {
 
                 @include tab1100 {
                     font-size: 20px;
+                }
+
+                @include tab700 {
+                    margin-block: 0px;
                 }
             }
 
