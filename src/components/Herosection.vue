@@ -213,6 +213,7 @@ import Button from 'primevue/button';
     align-items: center;
     padding-inline: 10px;
     padding-block: 40px;
+    padding-bottom: 58px !important;
 
     .logos {
         display: flex;
