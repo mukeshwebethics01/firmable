@@ -65,12 +65,14 @@ import Button from 'primevue/button';
 .hero {
     display: flex;
     padding-block: 50px;
-    padding-bottom: 259px;
+    padding-bottom: 170px;
     display: flex;
     justify-content: center;
     gap: 20px;
     padding-inline: 10px !important;
     padding-top: 136px;
+
+
 
     @include tablet {
         padding-bottom: 102px;
@@ -84,6 +86,7 @@ import Button from 'primevue/button';
         flex-direction: column;
         align-items: center;
         padding-top: 90px;
+        padding-bottom: 73px;
     }
 
     .hero-img {
@@ -231,9 +234,6 @@ import Button from 'primevue/button';
             gap: 78px;
         }
     }
-
-
-
 
 }
 

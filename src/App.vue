@@ -8,6 +8,7 @@ import Cards from "./components/Cards.vue";
 import Detail from "./components/Detail.vue";
 import Data from "./components/Data.vue";
 import Twite from "./components/Twite.vue";
+import Demo from "./components/Demo.vue"
 </script>
 <template>
    <Header />
@@ -16,6 +17,7 @@ import Twite from "./components/Twite.vue";
    <Detail />
    <Data />
    <Twite />
+   <!-- <Demo /> -->
    <Footer />
 </template>
 

@@ -10,6 +10,12 @@
 }
 }
 
+@mixin tab1024 {
+ @media screen and (max-width:1024px) {
+    @content;
+ }
+}
+
 @mixin desktop-larg{
 @media screen and (max-width: 1280px) {
     @content;
