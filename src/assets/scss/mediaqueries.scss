@@ -47,7 +47,7 @@
 }
 
 @mixin tab700{
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     @content;
 }
 }

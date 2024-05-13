@@ -175,7 +175,15 @@ onUnmounted(() => {
         padding-block: 90px;
         position: relative;
 
-        @include desktop-larg {
+        @include tablet {
+            gap: 15px;
+        }
+
+        @include tab1024 {
+            gap: 20px !important;
+        }
+
+        @include tab700 {
             flex-direction: column;
         }
 
@@ -244,13 +252,20 @@ onUnmounted(() => {
             background-repeat: no-repeat;
             position: relative;
             background-position: left;
+            min-width: 340px;
+
+            @include tab700 {
+                height: 600px !important;
+                min-width: 280px;
+            }
 
             @include tablet {
-                height: 600px !important;
+
+                min-width: 280px;
             }
 
             @include desktop-larg {
-                height: 787px;
+
                 max-width: 100%;
             }
 
@@ -258,6 +273,10 @@ onUnmounted(() => {
             .girlbg {
                 position: absolute;
                 bottom: 0;
+
+                @include tablet {
+                    height: 390px;
+                }
             }
         }
     }
@@ -312,6 +331,13 @@ onUnmounted(() => {
     display: flex;
     gap: 30px;
 
+    @include tablet {
+        gap: 15px;
+    }
+
+    @include tab1024 {
+        gap: 20px;
+    }
 
 
     .card-wrapper {
@@ -343,6 +369,10 @@ onUnmounted(() => {
     .cardtitle {
         font-weight: 600;
         font-family: "Rubik";
+
+        @include tablet {
+            font-size: 16px;
+        }
     }
 
     .card-wrapper:hover .cardtitle,
@@ -365,10 +395,26 @@ onUnmounted(() => {
 
     .second-card {
         margin-bottom: 30px;
+
+        @include tablet {
+            margin-bottom: 15px;
+        }
+
+        @include tab1024 {
+            margin-bottom: 20px;
+        }
     }
 
     .fourth-card {
         margin-bottom: 30px;
+
+        @include tablet {
+            margin-bottom: 15px;
+        }
+
+        @include tab1024 {
+            margin-bottom: 20px;
+        }
     }
 }
 

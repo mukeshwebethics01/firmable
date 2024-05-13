@@ -223,6 +223,9 @@ onUnmounted(() => {
 //     }
 // }
 
+.detail-img {
+    width: 100%;
+}
 
 
 .detail-container {
@@ -274,7 +277,7 @@ onUnmounted(() => {
         }
 
         .first {
-            @include tablet {
+            @include tab700 {
                 display: flex;
                 flex-direction: column-reverse;
             }
@@ -286,24 +289,29 @@ onUnmounted(() => {
             position: absolute;
             left: -12px;
             top: 186px;
+
+            @include tab1100 {
+                left: -13px;
+                top: 124px;
+            }
         }
 
         .second {
-            @include tablet {
+            @include tab700 {
                 display: flex;
                 flex-direction: column;
             }
         }
 
         .third {
-            @include tablet {
+            @include tab700 {
                 display: flex;
                 flex-direction: column-reverse;
             }
         }
 
         .four {
-            @include tablet {
+            @include tab700 {
                 display: flex;
                 flex-direction: column;
             }
@@ -326,9 +334,9 @@ onUnmounted(() => {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 150px;
+            gap: 100px;
 
-            @include tablet {
+            @include tab700 {
                 gap: 0px;
             }
 
@@ -369,7 +377,7 @@ onUnmounted(() => {
                 line-height: 29px;
                 color: #747474;
 
-                @include tablet {
+                @include tab700 {
                     font-size: 15px;
                 }
             }
