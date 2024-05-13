@@ -201,8 +201,8 @@ onUnmounted(() => {
             display: flex;
             align-items: end;
             position: absolute;
-            bottom: 51px;
-            right: 22px;
+            bottom: 54px;
+            right: 20px;
         }
 
         @include desktop-larg {

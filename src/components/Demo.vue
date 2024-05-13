@@ -14,7 +14,9 @@
                 <Galleria v-model:activeIndex="activeIndex" :value="images" :responsiveOptions="responsiveOptions"
                     :numVisible="5" containerStyle="max-width: 640px">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%" />
+                        <!-- <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%" /> -->
+                        <h2 class="heading">{{ slotProps.item.heading }}</h2>
+                        <p>{{ slotProps.item.paragraph }}</p>
                     </template>
                 </Galleria>
             </div>
@@ -30,8 +32,10 @@ import { ref } from 'vue';
 
 // Simulate images data
 const images = ref([
-    { itemImageSrc: 'https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true', alt: 'Image 1' },
-    { itemImageSrc: 'https://jes.edu.vn/wp-content/uploads/2017/10/hinh-anh.jpg', alt: 'Image 2' },
+    // { itemImageSrc: 'https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true', alt: 'Image 1' },
+    // { itemImageSrc: 'https://jes.edu.vn/wp-content/uploads/2017/10/hinh-anh.jpg', alt: 'Image 2' },
+    { heading: 'Heading 1' },
+    { paragraph: 'Paragraph 1' },
     // Add more image objects as needed
 ]);
 
@@ -51,6 +55,8 @@ const goToIndex = (index) => {
 </script>
 
 <style lang="scss" scoped>
+
+
 .dot-container {
     display: flex;
     justify-content: center;
@@ -75,4 +81,5 @@ const goToIndex = (index) => {
     flex-direction: column-reverse;
     align-items: center;
 }
+
 </style>
