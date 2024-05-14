@@ -261,7 +261,7 @@ onUnmounted(() => {
 
             @include tablet {
 
-                min-width: 280px;
+                min-width: 260px;
             }
 
             @include desktop-larg {
@@ -342,6 +342,21 @@ onUnmounted(() => {
 
     .card-wrapper {
         max-width: 385px !important;
+        padding-top: 32px;
+        padding-bottom: 17px;
+        padding-inline: 7px;
+
+        @include tab820 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-inline: 0px;
+        }
+
+        @include tab700 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-inline: 0px;
+        }
 
         &:hover {
             background: #73BFB8;
