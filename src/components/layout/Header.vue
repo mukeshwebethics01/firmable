@@ -4,7 +4,6 @@
             <Menubar :model="items" class="navbar">
                 <template #start>
                     <div class="logos">
-
                         <div>
                             <img class="main-first-latter" src="../../assets/images/firstalphabetimg.svg" alt="">
                         </div>
@@ -15,13 +14,13 @@
                     </div>
                 </template>
 
-                <template #item="{ item, props, hasSubmenu, root }" :focused="false">
+                <template #item="{ item, props, hasSubmenu, root }" :focused="false" :active="false">
                     <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings animation"
                         v-bind="props.action"
                         :style="item.label === 'Solutions' ? { color: 'white', borderBottom: '1px solid white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))">
                         <span :class="item.icon"></span>
                         <span
-                            @click="() => { if (item.label === 'Solutions') { updateShowMenuHandler(!showSolMenu) } console.log(item.label) }"
+                            @click="(e) => { if (windowWidth > 960) { e.stopPropagation() }; console.log('windowWidth', windowWidth); if (item.label === 'Solutions') { updateShowMenuHandler(!showSolMenu) } }"
                             class="ml-2">{{ item.label
                             }}</span>
                         <Badge v-if="item.badge" :class="{ 'ml-auto': !root, 'ml-2': root }" :value="item.badge" />
@@ -30,30 +29,28 @@
                                 item.shortcut
                             }}</span>
                         <i v-if="item.label == 'Solutions'"
-                            :class="['pi pi-angle-down', { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }]"></i>
+                            :class="['pi pi-angle-down', { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }]"
+                            @click="(e) => { if (windowWidth > 960) { e.stopPropagation() }; console.log('windowWidth', windowWidth); if (item.label === 'Solutions') { updateShowMenuHandler(!showSolMenu) } }"></i>
                     </a>
                 </template>
 
-                <template #menubutton="{ id, toggleCallback }" #end>
+                <template #menubutton="{ id, toggleCallback }"
+                    @click="() => { if (windowWidth > 960) { e.stopPropagation() }; }" #end>
                     <div>
                         <i class="pi pi-align-justify hamburger" @click="toggleCallback"></i>
                     </div>
                 </template>
-
             </Menubar>
             <!-- <h4 class="login login-color">Login</h4> -->
             <div v-if="showSolMenu" class="desktop-menu animated-menu">
                 <Demo />
             </div>
             <Button class="header-button" label="Warning" severity="warning" rounded>Get early access </Button>
-
         </div>
     </div>
-
-
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted, onRenderTriggered, nextTick } from "vue";
 import Menubar from "primevue/menubar";
 import Badge from "primevue/badge";
 import 'primeicons/primeicons.css';
@@ -61,15 +58,48 @@ import '../../assets/main.scss';
 import Button from 'primevue/button';
 import Demo from "../Demo.vue";
 
-const showSolMenu = ref(false);
 
+const showSolMenu = ref(false);
 const updateShowMenuHandler = (val) => {
     showSolMenu.value = val
 }
 
+const windowWidth = ref(window.windowWidth)
+
+const updateWindowWidth = () => {
+    windowWidth.value = window.innerWidth;
+};
+
+onMounted(async () => {
+    await nextTick()
+    windowWidth.value = window.innerWidth
+    window.addEventListener("resize", updateWindowWidth);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("resize", updateWindowWidth);
+});
+
+onRenderTriggered(() => {
+    console.log("run", window)
+})
+
+
 const items = ref([
     {
         label: 'Solutions',
+        items: [
+            {
+                label: 'Core',
+            },
+            {
+                label: "Blocks"
+            },
+            {
+                label: "UI Kit"
+            },
+        ],
+
     },
     {
         label: 'Resources',
@@ -98,6 +128,7 @@ window.addEventListener('scroll', function () {
 
 });
 
+
 window.addEventListener('scroll', function () {
     var login = document.querySelector('.login');
     if (window.scrollY > 0) {
@@ -113,13 +144,13 @@ window.addEventListener('scroll', function () {
 <style lang="scss" scoped>
 @import '../../assets/scss/mediaqueries.scss';
 @import "../../assets/scss/style.scss";
+// @import '../../assets/main.scss';
+
 
 
 
 .nav-bg {
     transition: background-color 0.3s ease;
-
-
 }
 
 .nav-bg.scrolled {

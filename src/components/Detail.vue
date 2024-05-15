@@ -77,8 +77,6 @@ const elementRef = ref(null);
 const getPosition1 = () => {
     if (elementRef.value) {
         const rect = elementRef.value.getBoundingClientRect();
-        console.log("rect", rect);
-        console.log("window.innerHeight", window.innerHeight)
         if (window.innerHeight > rect.y + 100) {
             animateClassVal.value = 'h2tagLocal'
         }
@@ -86,7 +84,6 @@ const getPosition1 = () => {
 };
 
 onMounted(() => {
-    console.log("running")
     window.addEventListener('scroll', getPosition1);
 })
 
