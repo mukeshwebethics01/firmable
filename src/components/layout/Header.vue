@@ -14,19 +14,22 @@
                         </div>
                     </div>
                 </template>
+
                 <template #item="{ item, props, hasSubmenu, root }" :focused="false">
                     <a v-ripple class="flex flex-row-reverse align-items-center navbar-headings animation"
                         v-bind="props.action"
-                        :style="item.label === 'Solutions' ? { color: 'white', borderBottom: '1px solid white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))"
-                        @click="(e) => { console.log('Link clicked!', e.preventDefault()); }">
+                        :style="item.label === 'Solutions' ? { color: 'white', borderBottom: '1px solid white' } : (item.label === 'Resources' ? { color: 'white' } : (item.label === 'About us' ? { color: 'white' } : (item.label === 'Contact' ? { color: 'white' } : {})))">
                         <span :class="item.icon"></span>
-                        <span class="ml-2">{{ item.label }}</span>
+                        <span
+                            @click="() => { if (item.label === 'Solutions') { updateShowMenuHandler(!showSolMenu) } console.log(item.label) }"
+                            class="ml-2">{{ item.label
+                            }}</span>
                         <Badge v-if="item.badge" :class="{ 'ml-auto': !root, 'ml-2': root }" :value="item.badge" />
                         <span v-if="item.shortcut"
                             class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{
                                 item.shortcut
                             }}</span>
-                        <i v-if="hasSubmenu"
+                        <i v-if="item.label == 'Solutions'"
                             :class="['pi pi-angle-down', { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }]"></i>
                     </a>
                 </template>
@@ -34,18 +37,21 @@
                 <template #menubutton="{ id, toggleCallback }" #end>
                     <div>
                         <i class="pi pi-align-justify hamburger" @click="toggleCallback"></i>
-
                     </div>
                 </template>
+
             </Menubar>
             <!-- <h4 class="login login-color">Login</h4> -->
+            <div v-if="showSolMenu" class="desktop-menu">
+                <Demo />
+            </div>
             <Button class="header-button" label="Warning" severity="warning" rounded>Get early access </Button>
+
         </div>
     </div>
 
 
 </template>
-
 <script setup>
 import { ref } from "vue";
 import Menubar from "primevue/menubar";
@@ -53,25 +59,17 @@ import Badge from "primevue/badge";
 import 'primeicons/primeicons.css';
 import '../../assets/main.scss';
 import Button from 'primevue/button';
+import Demo from "../Demo.vue";
+
+const showSolMenu = ref(false);
+
+const updateShowMenuHandler = (val) => {
+    showSolMenu.value = val
+}
 
 const items = ref([
     {
         label: 'Solutions',
-        items: [
-            {
-                label: 'Resource',
-
-            },
-            {
-                label: 'Blocks',
-
-            },
-            {
-                label: 'UI Kit',
-
-            },
-
-        ]
     },
     {
         label: 'Resources',
@@ -87,7 +85,6 @@ const items = ref([
     }
 
 ]);
-
 
 
 window.addEventListener('scroll', function () {
@@ -331,5 +328,11 @@ window.addEventListener('scroll', function () {
     }
 
 
+}
+
+.desktop-menu {
+    position: absolute;
+    z-index: 2;
+    margin-top: 70px;
 }
 </style>
