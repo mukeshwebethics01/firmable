@@ -115,6 +115,7 @@ import Button from 'primevue/button';
         }
     }
 
+
 }
 
 .left-side {

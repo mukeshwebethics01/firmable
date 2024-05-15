@@ -42,7 +42,7 @@
 
             </Menubar>
             <!-- <h4 class="login login-color">Login</h4> -->
-            <div v-if="showSolMenu" class="desktop-menu">
+            <div v-if="showSolMenu" class="desktop-menu animated-menu">
                 <Demo />
             </div>
             <Button class="header-button" label="Warning" severity="warning" rounded>Get early access </Button>
@@ -334,5 +334,21 @@ window.addEventListener('scroll', function () {
     position: absolute;
     z-index: 2;
     margin-top: 70px;
+}
+
+.animated-menu {
+    animation-name: slidein;
+    animation-duration: 0.4s;
+    animation-timing-function: ease forwards;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(30%);
+    }
+
+    to {
+        transform: translateY(-0%);
+    }
 }
 </style>
