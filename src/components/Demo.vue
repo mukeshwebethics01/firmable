@@ -21,10 +21,10 @@
                     </div>
                     <div>
                         <h4 class="menutitle">Recruitment</h4>
-                        <p class="content-one">Less searching, more time selling</p>
-                        <p class="content-two">Sales prospecting database
-                            Lead qualification
-                            Sales Intelligence</p>
+                        <p class="content-one">Place the right talent, faster</p>
+                        <p class="content-two">Profile and find ideal candidates
+                            Linkedin Recruiter alternative
+                            Enrich ATS candidate data</p>
                     </div>
                 </div>
                 <div class="marketing">
@@ -33,22 +33,22 @@
                     </div>
                     <div>
                         <h4 class="menutitle">Marketing</h4>
-                        <p class="content-one">Less searching, more time selling</p>
-                        <p class="content-two">Sales prospecting database
-                            Lead qualification
-                            Sales Intelligence</p>
+                        <p class="content-one">Qualified leads, happier sales teams </p>
+                        <p class="content-two">B2B lead generation
+                            Ideal customer profilling (ICP)
+                            Lead scoring & sales handoff</p>
                     </div>
                 </div>
                 <div class="market-intelligence">
                     <div>
-                        <img src="../assets/images/recruitersicon.svg" alt="">
+                        <img src="../assets/images/octicon_goal.svg" alt="">
                     </div>
                     <div>
-                        <h4 class="menutitle">Market Intelligence</h4>
+                        <h4 class="menutitle">Make better decisions</h4>
                         <p class="content-one">Less searching, more time selling</p>
-                        <p class="content-two">Sales prospecting database
-                            Lead qualification
-                            Sales Intelligence</p>
+                        <p class="content-two">Australian company data
+                            TAM and marketing sizing
+                            Track start-ups and competitors</p>
                     </div>
                 </div>
             </div>
@@ -98,6 +98,7 @@ import Button from 'primevue/button';
         color: #18345399;
         font-weight: 500;
         font-family: "Rubik", sans-serif;
+        font-size: 16px;
     }
 
     .box {
@@ -173,6 +174,7 @@ import Button from 'primevue/button';
         font-size: 15px;
         font-family: "Poppins-Regular", sans-serif;
         line-height: 22px;
+        margin-block: 8px;
 
         @include tab1100 {
             margin-block: 7px;
@@ -184,6 +186,7 @@ import Button from 'primevue/button';
         font-size: 15px;
         font-family: "Poppins-Regular", sans-serif;
         line-height: 24px;
+        margin-block: 8px;
 
         @include tab1100 {
             margin-block: 7px;
@@ -215,6 +218,7 @@ import Button from 'primevue/button';
     font-family: "Rubik", sans-serif;
     font-weight: 500;
     line-height: 20px;
+    margin-bottom: 0px;
 }
 
 .btn-demo {
