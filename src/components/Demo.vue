@@ -80,7 +80,7 @@ import Button from 'primevue/button';
     display: flex;
     max-width: 1050px;
     gap: 24px;
-    box-shadow: 1px -1px 16px -17px;
+    box-shadow: 0px 13px 17px -15px;
     background: white;
     position: relative;
     border-radius: 10px;
