@@ -84,7 +84,12 @@
             <hr class="hrline">
             <div class="copyright">
                 <span class="copyright-span">©2023 All Rights Reserved by Firmable</span>
-                <span class="copyright-span">Privacy Policy | Terms of service</span>
+                <div class="copyright-div">
+                    <a href="#" class="copyright-a">Privacy Policy </a>
+                    <div class="copyright-center-line"></div>
+                    <a href="#">Terms of service</a>
+                </div>
+                <!-- <span class="copyright-span"> <a href="#"></a> | </span> -->
             </div>
         </div>
     </div>
@@ -348,8 +353,9 @@ onUnmounted(() => {
         padding-inline: 28px;
         padding-block: 20px;
 
-        @include tablet {
+        @include tab700 {
             flex-direction: column;
+            align-items: center;
         }
 
         &-span {
@@ -359,7 +365,32 @@ onUnmounted(() => {
         }
 
 
+        .copyright-div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copyright-div a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: "Poppins-Regular", sans-serif;
+
+            &:hover {
+                color: #2C8CF4;
+            }
+        }
+
+
     }
+
+    .copyright-center-line {
+        background: white;
+        height: 14px;
+        width: 1px;
+    }
+
 
     .footer-logo-parent,
     .copyright {

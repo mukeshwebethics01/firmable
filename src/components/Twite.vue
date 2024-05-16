@@ -201,21 +201,18 @@ onUnmounted(() => {
             gap: 70px;
         }
 
-
         .text-container {
             background: #73BFB8;
             border-radius: 10px;
             padding-inline: 40px;
             padding-top: 40px;
             padding-bottom: 20px;
-            max-width: 628px;
             min-height: 300px;
             position: relative;
 
             @include tablet {
                 padding-inline: 10px
             }
-
 
             &::before {
                 content: url('../assets/images/quote.svg');
@@ -231,20 +228,26 @@ onUnmounted(() => {
             //     bottom: -82px;
             // }
 
-
         }
 
         .smilegirl {
             height: 182px;
-            width: 152px;
+
             position: absolute;
-            right: -51px;
+            right: -40px;
             bottom: -87px;
+            margin-inline: 10px;
 
             @include tab700 {
                 height: 144px;
                 right: -33px;
                 bottom: -63px;
+            }
+
+            @include mobile {
+                height: 111px;
+                right: -47px;
+
             }
         }
 
